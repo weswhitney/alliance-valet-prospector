@@ -4,6 +4,27 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// galvanize knex code
+const env = 'development';
+const config = require('./db/knexfile.js')[env];
+const knex = require('knex')(config);
+
+const sql = knex('test-table').toString();
+
+knex('test-table')
+    .insert({
+        names: 'Deadpool',
+    })
+    .then((result) => {
+        console.log(result);
+        knex.destroy();
+    })
+    .catch((err) => {
+        console.error(err);
+        knex.destroy();
+        process.exit(1);
+});
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
