@@ -13,7 +13,7 @@ const sql = knex('test-table').toString();
 
 knex('test-table')
     .insert({
-        names: 'Deadpool',
+        names: 'Don Johnson',
     })
     .then((result) => {
         console.log(result);
