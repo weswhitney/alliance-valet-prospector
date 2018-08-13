@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 // const config = require('./db/knexfile.js')[env];
 // const knex = require('knex')(config);
 
-const sql = knex('test-table').toString();
+// const sql = knex('test-table').toString();
 
 // knex('test-table')
 //     .insert({
