@@ -1,10 +1,13 @@
+    console.log('process.env.DATABASE_URL: ', process.env.DATABASE_URL);
 module.exports = {
     development: {
         client: 'pg',
-        connection: 'postgres://localhost/valet-prospector'
+        connection: 'postgres://localhost/valet-prospector',
+        debug: true
     },
     production: {
-        connectionString: process.env.DATABASE_URL,
+        client: 'pg',
+        connection: process.env.DATABASE_URL,
         ssl: true
     }
 };
@@ -21,3 +24,8 @@ module.exports = {
 //         database : 'myapp_test'
 //     }
 // });
+
+
+
+
+// postgresql-fluffy-12091
