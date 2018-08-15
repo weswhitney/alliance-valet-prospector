@@ -10,21 +10,21 @@ var bodyParser = require('body-parser');
 // const config = require('./db_old/knexfile_old.js')[env];
 // const knex = require('knex')(config);
 
-const sql = knex('test-table').toString();
+// const sql = knex('test-table').toString();
 
-knex('test-table')
-    .insert({
-        names: 'Johnny Appleseed',
-    })
-    .then((result) => {
-        console.log(result);
-        knex.destroy();
-    })
-    .catch((err) => {
-        console.error(err);
-        knex.destroy();
-        process.exit(1);
-});
+// knex('test-table')
+//     .insert({
+//         names: 'Johnny Appleseed',
+//     })
+//     .then((result) => {
+//         console.log(result);
+//         knex.destroy();
+//     })
+//     .catch((err) => {
+//         console.error(err);
+//         knex.destroy();
+//         process.exit(1);
+// });
 
 
 var index = require('./routes/index');
