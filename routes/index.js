@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+var queries = require('../db/queries');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -8,7 +9,13 @@ router.get('/', function(req, res, next) {
 
 /* GET all valet stations */
 router.get('/valet-stations', function (req, res, next) {
-    res.send('send valet stations back');
+    queries.getAll()
+        .then(function (stations) {
+            res.status(200).json(stations);
+        })
+        .catch(function (error) {
+            next(error);
+        });
 });
 
 module.exports = router;
