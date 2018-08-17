@@ -18,4 +18,14 @@ router.get('/valet-stations', function (req, res, next) {
         });
 });
 
+router.get('/valet-stations/:id', function (req, res, next) {
+    queries.getSingle(req.params.id)
+        .then(function (station) {
+            res.status(200).json(station);
+        })
+        .catch(function (error) {
+            next(error);
+        });
+});
+
 module.exports = router;

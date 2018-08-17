@@ -10,6 +10,11 @@ function getAll() {
     return ValetStations().select();
 }
 
-module.exports = {
-    getAll: getAll
+function getSingle(stationID) {
+    return ValetStations().where('id', parseInt(stationID)).first();
 }
+
+module.exports = {
+    getAll: getAll,
+    getSingle: getSingle
+};
