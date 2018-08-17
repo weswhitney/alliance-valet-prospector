@@ -14,7 +14,12 @@ function getSingle(stationID) {
     return ValetStations().where('id', parseInt(stationID)).first();
 }
 
+function add(station) {
+    return ValetStations().insert(station, 'id');
+}
+
 module.exports = {
     getAll: getAll,
-    getSingle: getSingle
+    getSingle: getSingle,
+    add: add
 };

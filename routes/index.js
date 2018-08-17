@@ -28,4 +28,17 @@ router.get('/valet-stations/:id', function (req, res, next) {
         });
 });
 
+router.post('/valet-stations', function(req, res, next) {
+    queries.add(req.body)
+        .then(function(stationID) {
+            return queries.getSingle(stationID);
+        })
+        .then(function(station) {
+            res.status(200).json(station);
+        })
+        .catch(function(error) {
+            next(error);
+        });
+});
+
 module.exports = router;
