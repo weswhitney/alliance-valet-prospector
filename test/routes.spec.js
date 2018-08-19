@@ -126,3 +126,30 @@ describe('POST /valet-stations', function() {
             });
     });
 });
+
+describe('PUT /valet-stations/:id', function() {
+    it('should update a station', function(done) {
+        chai.request(server)
+            .put('/valet-stations/1')
+            .send({
+                rating: 4,
+                explicit: true
+            })
+            .end(function(err, res) {
+                res.should.have.status(200);
+                res.should.be.json; // jshint ignore:line
+                res.body.should.be.a('object');
+                res.body.should.have.property('name');
+                res.body.name.should.equal('Suits');
+                res.body.should.have.property('channel');
+                res.body.channel.should.equal('USA Network');
+                res.body.should.have.property('genre');
+                res.body.genre.should.equal('Drama');
+                res.body.should.have.property('rating');
+                res.body.rating.should.equal(4);
+                res.body.should.have.property('explicit');
+                res.body.explicit.should.equal(true);
+                done();
+            });
+    });
+});
