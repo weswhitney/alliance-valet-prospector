@@ -1,4 +1,3 @@
-
 exports.seed = function(knex, Promise) {
     return knex('test-two').del() // Deletes ALL existing entries
         .then(function() { // Inserts seed entries one by one in series

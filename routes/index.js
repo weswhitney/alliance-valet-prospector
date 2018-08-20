@@ -55,4 +55,20 @@ router.put('/valet-stations/:id', function(req, res, next) {
         });
 });
 
+// *** delete show *** //
+router.delete('/valet-stations/:id', function(req, res, next) {
+    queries.getSingle(req.params.id)
+        .then(function(station) {
+            queries.deleteItem(req.params.id)
+                .then(function() {
+                    res.status(200).json(station);
+                })
+                .catch(function(error) {
+                    next(error);
+                });
+        }).catch(function(error) {
+        next(error);
+    });
+});
+
 module.exports = router;

@@ -1,4 +1,7 @@
-// Update with your config settings.
+// the file which contains our various database configurations. Once you have a knexfile.js, you can use the migration tool
+// to create migration files to the specified directory (default migrations). Creating new migration files can be achieved
+// by running: $ knex migrate:make migration_name
+
 
 module.exports = {
 
