@@ -15,6 +15,7 @@ exports.up = function(knex, Promise) {
         table.date('date');
         table.string('address');
         table.string('comment');
+        // table.string('payment_form'); add this column
     });
 };
 
