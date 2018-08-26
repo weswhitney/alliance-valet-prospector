@@ -12,8 +12,8 @@ exports.seed = function(knex, Promise) {
                 establishment_contact: 'Jaime Hernandez',
                 establishment_email: 'jaime@thebarnres.com',
                 num_employees: 2,
-                time: 300,
-                date: 082318,
+                time: 700,
+                date: '2018-01-08',
                 address: '1234 E. 1st street Denver, CO 80201',
                 comment: 'pretty busy on a Monday night. not sure where they park the cars'
 
@@ -30,8 +30,8 @@ exports.seed = function(knex, Promise) {
                 establishment_contact: 'Jack Smith',
                 establishment_email: 'jack@themilkbarrel.com',
                 num_employees: 1,
-                time: 300,
-                date: 082318,
+                time: 1200,
+                date: '2018-04-20',
                 address: '1877 17th street Denver, CO 80201',
                 comment: 'This place looks cool, young crowd. Hipster food court.'
 ,            });
@@ -48,7 +48,7 @@ exports.seed = function(knex, Promise) {
                 establishment_email: 'pg@threedogs.com',
                 num_employees: 3,
                 time: 300,
-                date: 082318,
+                date: '1999-01-08',
                 address: '145 Gaylord street Denver, CO 80201',
                 comment: 'this place sucks.'
             });
