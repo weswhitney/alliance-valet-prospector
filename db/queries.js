@@ -1,7 +1,7 @@
 var knex = require('./knex.js');
 
 function ValetStations() {
-    return knex('test-two');
+    return knex('stations');
 }
 
 /* queries */
