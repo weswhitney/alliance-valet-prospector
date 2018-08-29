@@ -1,7 +1,7 @@
 exports.seed = function(knex, Promise) {
-    return knex('stations').del() // Deletes ALL existing entries
+    return knex('valet_stations').del() // Deletes ALL existing entries
         .then(function() { // Inserts seed entries one by one in series
-            return knex('stations').insert({
+            return knex('valet_stations').insert({
                 valet_name: 'awesome valet',
                 valet_phone: '303-123-4567',
                 valet_web: 'www.awesomevalet.com',
@@ -17,7 +17,7 @@ exports.seed = function(knex, Promise) {
 
                 ,            });
         }).then(function () {
-            return knex('stations').insert({
+            return knex('valet_stations').insert({
                 valet_name: 'premier valet',
                 valet_phone: '3038473890',
                 valet_web: 'www.premiervalet.com',
@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
                 comment: 'This place looks cool, young crowd. Hipster food court.'
                 ,            });
         }).then(function () {
-            return knex('stations').insert({
+            return knex('valet_stations').insert({
                 valet_name: 'first valet',
                 valet_phone: '7207489940',
                 valet_web: 'www.firstvalet.com',

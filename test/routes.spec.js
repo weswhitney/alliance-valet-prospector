@@ -25,15 +25,28 @@ describe('API Routes', function() {
         //                 });
         //         });
         // });
-        //
-        // afterEach(function (done) {
-        //     knex.migrate.rollback()
-        //         .then(function () {
-        //             done();
-        //         });
-        // });
 
-        it('should return all shows', function (done) {
+
+        beforeEach(function(done) {
+            knex.migrate.rollback()
+                .then(function () {
+                    return knex.migrate.latest()
+                }).then(function () {
+                return knex.seed.run()
+            }).then(function () {
+                done();
+            });
+        });
+
+
+        afterEach(function (done) {
+            knex.migrate.rollback()
+                .then(function () {
+                    done();
+                });
+        });
+
+        it.skip('should return all shows', function (done) {
             chai.request(server)
                 .get('/valet-stations')
                 .end(function (err, res) {
@@ -54,9 +67,19 @@ describe('API Routes', function() {
                     done();
                 });
         });
+        it('should return all valet stations', function (done) {
+            chai.request(server)
+                .get('/valet-stations')
+                .end(function (err, res) {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.body.should.be.a('array');
+                    res.body.length.should.equal(3);
+                })
+        })
     });
 
-    describe('GET /valet-stations/:id', function () {
+    describe.skip('GET /valet-stations/:id', function () {
 
         it('should return a single show', function (done) {
             chai.request(server)
@@ -80,7 +103,7 @@ describe('API Routes', function() {
         });
     });
 
-    describe('POST /valet-stations', function () {
+    describe.skip('POST /valet-stations', function () {
         it('should add a valet station', function (done) {
             chai.request(server)
                 .post('/valet-stations')
@@ -110,7 +133,7 @@ describe('API Routes', function() {
         });
     });
 
-    describe('PUT /valet-stations/:id', function () {
+    describe.skip('PUT /valet-stations/:id', function () {
         it('should update a station', function (done) {
             chai.request(server)
                 .put('/valet-stations/1')
@@ -137,7 +160,7 @@ describe('API Routes', function() {
         });
     });
 
-    describe('DELETE /valet-stations/:id', function () {
+    describe.skip('DELETE /valet-stations/:id', function () {
         it('should delete a show', function (done) {
             chai.request(server)
                 .delete('/valet-stations/1')
