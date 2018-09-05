@@ -46,27 +46,6 @@ describe('API Routes', function() {
                 });
         });
 
-        it.skip('should return all shows', function (done) {
-            chai.request(server)
-                .get('/valet-stations')
-                .end(function (err, res) {
-                    res.should.have.status(200);
-                    res.should.be.json; // jshint ignore:line
-                    res.body.should.be.a('array');
-                    res.body.length.should.equal(4);
-                    res.body[0].should.have.property('name');
-                    res.body[0].name.should.equal('Suits');
-                    res.body[0].should.have.property('channel');
-                    res.body[0].channel.should.equal('USA Network');
-                    res.body[0].should.have.property('genre');
-                    res.body[0].genre.should.equal('Drama');
-                    res.body[0].should.have.property('rating');
-                    res.body[0].rating.should.equal(3);
-                    res.body[0].should.have.property('explicit');
-                    res.body[0].explicit.should.equal(false);
-                    done();
-                });
-        });
         it('should return all valet stations', function (done) {
             chai.request(server)
                 .get('/valet-stations')
@@ -75,8 +54,33 @@ describe('API Routes', function() {
                     res.should.be.json;
                     res.body.should.be.a('array');
                     res.body.length.should.equal(3);
-                })
-        })
+                    res.body[0].should.have.property('address');
+                    res.body[0].address.should.equal('1234 E. 1st street Denver, CO 80201');
+                    res.body[0].should.have.property('comment');
+                    res.body[0].comment.should.equal('pretty busy on a Monday night. not sure where they park the cars');
+                    res.body[0].should.have.property('establishment_contact');
+                    res.body[0].establishment_contact.should.equal('Jaime Hernandez');
+                    res.body[0].should.have.property('establishment_email');
+                    res.body[0].establishment_email.should.equal('jaime@thebarnres.com');
+                    res.body[0].should.have.property('establishment_name');
+                    res.body[0].establishment_name.should.equal('The Barn Restaurant');
+                    res.body[0].should.have.property('establishment_phone');
+                    res.body[0].establishment_phone.should.equal('303-987-4456');
+                    res.body[0].should.have.property('num_employees');
+                    res.body[0].num_employees.should.equal(2);
+                    res.body[0].should.have.property('valet_contact');
+                    res.body[0].valet_contact.should.equal('John Doe');
+                    res.body[0].should.have.property('valet_email');
+                    res.body[0].valet_email.should.equal('info@awesomevalet.com');
+                    res.body[0].should.have.property('valet_name');
+                    res.body[0].valet_name.should.equal('awesome valet');
+                    res.body[0].should.have.property('valet_phone');
+                    res.body[0].valet_phone.should.equal('303-123-4567')
+                    res.body[0].should.have.property('valet_web');
+                    res.body[0].valet_web.should.equal('www.awesomevalet.com');
+                    done();
+                });
+        });
     });
 
     describe.skip('GET /valet-stations/:id', function () {
