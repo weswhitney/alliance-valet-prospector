@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
 router.get('/valet-stations', function (req, res, next) {
     queries.getAll()
         .then(function (stations) {
-            res.status(200).json(stations);
+            // res.status(200).json(stations);
+            res.render('valet_stations', { valetStationList: stations});
         })
         .catch(function (error) {
             next(error);
@@ -21,7 +22,8 @@ router.get('/valet-stations', function (req, res, next) {
 router.get('/valet-stations/:id', function (req, res, next) {
     queries.getSingle(req.params.id)
         .then(function (station) {
-            res.status(200).json(station);
+            // res.status(200).json(station);
+            res.render('valet_stations', { valetName : station.valet_name});
         })
         .catch(function (error) {
             next(error);

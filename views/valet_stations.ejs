@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>titl</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<h1>Valet Stations</h1>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Valet Name</th>
+        <th scope="col">Valet phone</th>
+        <th scope="col">Valet website</th>
+        <th scope="col">Valet email</th>
+        <th scope="col">Valet contact</th>
+        <th scope="col">Establishment name</th>
+        <th scope="col">Establishment phone</th>
+        <th scope="col">Establishment contact</th>
+        <th scope="col">Establishment email</th>
+        <th scope="col">Number Employees</th>
+        <th scope="col">Address</th>
+        <th scope="col">Comment</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% valetStationList.forEach(function(station){ %>
+        <tr>
+        <td><%= station.valet_name %></td>
+        <td><%= station.valet_phone %></td>
+        <td><%= station.valet_web %></td>
+        <td><%= station.valet_email %></td>
+        <td><%= station.valet_contact %></td>
+        <td><%= station.establishment_name %></td>
+        <td><%= station.establishment_phone %></td>
+        <td><%= station.establishment_contact %></td>
+        <td><%= station.establishment_email %></td>
+        <td><%= station.num_employees %></td>
+        <td><%= station.address %></td>
+        <td><%= station.comment %></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+</body>
+</html>
