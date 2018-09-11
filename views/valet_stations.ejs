@@ -5,6 +5,66 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+<form>
+    <div class="form-group">
+        <label for="valetName">Valet Name</label>
+        <input type="" class="form-control" id="valetName" placeholder="valet company name">
+    </div>
+    <div class="form-group">
+        <label for="valetPhone">Valet Phone</label>
+        <input type="" class="form-control" id="valetPhone" placeholder="303-555-5367">
+    </div>
+    <div class="form-group">
+        <label for="valetWeb">Valet Website</label>
+        <input type="" class="form-control" id="valetWeb" placeholder="dansvaletco.com">
+    </div>
+    <div class="form-group">
+        <label for="valetEmail">Valet Email</label>
+        <input type="email" class="form-control" id="valetEmail" placeholder="valetname@example.com">
+    </div>
+    <div class="form-group">
+        <label for="valetContact">Valet Contact</label>
+        <input type="" class="form-control" id="valetContact" placeholder="Dan Hannigan">
+    </div>
+    <div class="form-group">
+        <label for="establishmentName">Establishment Name</label>
+        <input type="" class="form-control" id="establishmentName" placeholder="Morton's Steakhouse">
+    </div>
+    <div class="form-group">
+        <label for="establishmentPhone">Establishment Phone</label>
+        <input type="email" class="form-control" id="establishmentPhone" placeholder="720-334-9999">
+    </div>
+    <div class="form-group">
+        <label for="establishmentContact">Establishment Contact</label>
+        <input type="email" class="form-control" id="establishmentContact" placeholder="Bertrand Garrison">
+    </div>
+    <div class="form-group">
+        <label for="establishmentEmail">Establishment Email</label>
+        <input type="email" class="form-control" id="establishmentEmail" placeholder="establishmentname@example.com">
+    </div>
+    <div class="form-group">
+        <label for="numEmployees">Number of Valets</label>
+        <select class="form-control" id="numEmployees">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="stationLoc">Valet Station Location</label>
+        <input type="" class="form-control" id="stationLoc" placeholder="1234 Main st. Denver 80238">
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea class="form-control" id="comment" rows="3"></textarea>
+    </div>
+</form>
+
+
+
 <h1>Valet Stations</h1>
 <table class="table table-bordered">
     <thead>
@@ -42,5 +102,6 @@
         <% }); %>
     </tbody>
 </table>
+</div>
 </body>
 </html>
