@@ -8,41 +8,49 @@
 <div class="container">
 <form action="/valet-stations" method="post">
     <div class="form-group">
-        <label for="valetName">Valet Name</label>
-        <input name="valet_name" class="form-control" id="valetName">
-    </div>
-    <div class="form-group">
-        <label for="valetPhone">Valet Phone</label>
-        <input name="valet_phone" class="form-control" id="valetPhone" placeholder="555-555-5555">
-    </div>
-    <div class="form-group">
-        <label for="valetWeb">Valet Website</label>
-        <input name="valet_web" class="form-control" id="valetWeb">
-    </div>
-    <div class="form-group">
-        <label for="valetEmail">Valet Email</label>
-        <input type="email" name="valet_email" class="form-control" id="valetEmail" placeholder="valetname@example.com">
-    </div>
-    <div class="form-group">
-        <label for="valetContact">Valet Contact</label>
-        <input name="valet_contact" class="form-control" id="valetContact">
+        <label for="stationLoc">Valet Station Location</label>
+        <input name="address" class="form-control" id="stationLoc">
     </div>
     <div class="form-group">
         <label for="establishmentName">Establishment Name</label>
         <input name="establishment_name" class="form-control" id="establishmentName">
     </div>
     <div class="form-group">
-        <label for="establishmentPhone">Establishment Phone</label>
-        <input name="establishment_phone" class="form-control" id="establishmentPhone" placeholder="555-555-5555">
+        <label for="establishmentWeb">Establishment Website</label>
+        <input name="establishment_web" class="form-control" id="establishmentWeb">
     </div>
     <div class="form-group">
-        <label for="establishmentContact">Establishment Contact</label>
-        <input name="establishment_contact" class="form-control" id="establishmentContact">
+        <label for="valetName">Valet Name</label>
+        <input name="valet_name" class="form-control" id="valetName">
     </div>
+    <!--<div class="form-group">-->
+        <!--<label for="valetPhone">Valet Phone</label>-->
+        <!--<input name="valet_phone" class="form-control" id="valetPhone" placeholder="555-555-5555">-->
+    <!--</div>-->
     <div class="form-group">
-        <label for="establishmentEmail">Establishment Email</label>
-        <input type="email" name="establishment_email" class="form-control" id="establishmentEmail" placeholder="establishmentname@example.com">
+        <label for="valetWeb">Valet Website</label>
+        <input name="valet_web" class="form-control" id="valetWeb">
     </div>
+    <!--<div class="form-group">-->
+        <!--<label for="valetEmail">Valet Email</label>-->
+        <!--<input type="email" name="valet_email" class="form-control" id="valetEmail" placeholder="valetname@example.com">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="valetContact">Valet Contact</label>-->
+        <!--<input name="valet_contact" class="form-control" id="valetContact">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="establishmentPhone">Establishment Phone</label>-->
+        <!--<input name="establishment_phone" class="form-control" id="establishmentPhone" placeholder="555-555-5555">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="establishmentContact">Establishment Contact</label>-->
+        <!--<input name="establishment_contact" class="form-control" id="establishmentContact">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+        <!--<label for="establishmentEmail">Establishment Email</label>-->
+        <!--<input type="email" name="establishment_email" class="form-control" id="establishmentEmail" placeholder="establishmentname@example.com">-->
+    <!--</div>-->
     <div class="form-group">
         <label for="numEmployees">Number of Valets</label>
         <select name="num_employees" class="form-control" id="numEmployees">
@@ -52,10 +60,6 @@
             <option>4</option>
             <option>5</option>
         </select>
-    </div>
-    <div class="form-group">
-        <label for="stationLoc">Valet Station Location</label>
-        <input name="address" class="form-control" id="stationLoc">
     </div>
     <div class="form-group">
         <label for="comment">Comment</label>
@@ -99,6 +103,7 @@
         <td><%= station.num_employees %></td>
         <td><%= station.address %></td>
         <td><%= station.comment %></td>
+        <!--<td><%= station.establishment_web %></td>-->
         </tr>
         <% }); %>
     </tbody>
