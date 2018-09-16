@@ -1,8 +1,11 @@
 var knex = require('./knex.js');
 
 function ValetStations() {
-    return knex('valet_stations');
+    return knex('prospects');
 }
+// function ValetStations() {
+//     return knex('valet_stations');
+// }
 
 /* queries */
 
