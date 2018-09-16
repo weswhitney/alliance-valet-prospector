@@ -51,9 +51,9 @@ describe('API Routes', function() {
                 .get('/valet-stations')
                 .end(function (err, res) {
                     res.should.have.status(200);
-                    res.should.be.json;
-                    res.body.should.be.a('array');
-                    res.body.length.should.equal(3);
+                    // res.should.be.json;
+                    // res.body.should.be.a('array');
+                    // res.body.length.should.equal(3);
                     res.body[0].should.have.property('address');
                     res.body[0].address.should.equal('1234 E. 1st street Denver, CO 80201');
                     res.body[0].should.have.property('comment');
@@ -78,6 +78,7 @@ describe('API Routes', function() {
                     res.body[0].valet_phone.should.equal('303-123-4567')
                     res.body[0].should.have.property('valet_web');
                     res.body[0].valet_web.should.equal('www.awesomevalet.com');
+                    res.body[0].should.have.property('establishment_web');
                     done();
                 });
         });
