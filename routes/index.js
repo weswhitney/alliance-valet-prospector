@@ -35,8 +35,11 @@ router.post('/valet-stations', function(req, res, next) {
         .then(function(stationID) {
             return queries.getSingle(stationID);
         })
-        .then(function(station) {
-            res.status(200).json(station);
+        // .then(function(station) {
+        //     res.status(200).json(station);
+        // })
+        .then(function () {
+            res.redirect('/valet-stations');
         })
         .catch(function(error) {
             next(error);
