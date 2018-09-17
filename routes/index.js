@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 router.get('/valet-stations', function (req, res, next) {
     queries.getAll()
         .then(function (stations) {
-            // res.status(200).json(stations);
             res.render('valet_stations', { valetStationList: stations});
         })
         .catch(function (error) {
@@ -35,9 +34,6 @@ router.post('/valet-stations', function(req, res, next) {
         .then(function(stationID) {
             return queries.getSingle(stationID);
         })
-        // .then(function(station) {
-        //     res.status(200).json(station);
-        // })
         .then(function () {
             res.redirect('/valet-stations');
         })
