@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Prospector</title>
+</head>
+<body class="bg-light">
+<div class="container">
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Valet Stations</span>
+  </nav>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">Address</th>
+          <th scope="col">Establishment name</th>
+          <th scope="col">Establishment Website</th>
+          <th scope="col">Valet Name</th>
+          <th scope="col">Valet website</th>
+          <th scope="col">Number Employees</th>
+          <th scope="col">Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% valetStationList.forEach(function(station){ %>
+        <tr>
+          <td><%= station.address %></td>
+          <td><%= station.establishment_name %></td>
+          <td><%= station.establishment_web %></td>
+          <td><%= station.valet_name %></td>
+          <td><%= station.valet_web %></td>
+          <td><%= station.num_employees %></td>
+          <td><%= station.comment %></td>
+        </tr>
+        <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</body>
 </html>

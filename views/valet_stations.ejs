@@ -13,7 +13,7 @@
         <span class="navbar-brand mb-0 h1">Valet Prospector</span>
     </nav>
         <div class="row">
-            <div class="col-md-8 order-md-1">
+            <div class="col-md-12">
                 <form action="/valet-stations" method="post">
                     <div class="mb-3">
                         <label for="stationLoc">Valet Station Location</label>
@@ -54,37 +54,37 @@
             </div>
         </div>
     </div>
-<div class="row">
-    <div class="col-md-8 order-md-1">
-        <h1>Valet Stations</h1>
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">Address</th>
-                <th scope="col">Establishment name</th>
-                <th scope="col">Establishment Website</th>
-                <th scope="col">Valet Name</th>
-                <th scope="col">Valet website</th>
-                <th scope="col">Number Employees</th>
-                <th scope="col">Comment</th>
-            </tr>
-            </thead>
-            <tbody>
-                <% valetStationList.forEach(function(station){ %>
-                <tr>
-                <td><%= station.address %></td>
-                <td><%= station.establishment_name %></td>
-                <td><%= station.establishment_web %></td>
-                <td><%= station.valet_name %></td>
-                <td><%= station.valet_web %></td>
-                <td><%= station.num_employees %></td>
-                <td><%= station.comment %></td>
-                </tr>
-                <% }); %>
-            </tbody>
-        </table>
-    </div>
-</div>
+<!--<div class="row">-->
+    <!--<div class="col-md-8 order-md-1">-->
+        <!--<h1>Valet Stations</h1>-->
+        <!--<table class="table table-bordered">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th scope="col">Address</th>-->
+                <!--<th scope="col">Establishment name</th>-->
+                <!--<th scope="col">Establishment Website</th>-->
+                <!--<th scope="col">Valet Name</th>-->
+                <!--<th scope="col">Valet website</th>-->
+                <!--<th scope="col">Number Employees</th>-->
+                <!--<th scope="col">Comment</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+                <!--<% valetStationList.forEach(function(station){ %>-->
+                <!--<tr>-->
+                <!--<td><%= station.address %></td>-->
+                <!--<td><%= station.establishment_name %></td>-->
+                <!--<td><%= station.establishment_web %></td>-->
+                <!--<td><%= station.valet_name %></td>-->
+                <!--<td><%= station.valet_web %></td>-->
+                <!--<td><%= station.num_employees %></td>-->
+                <!--<td><%= station.comment %></td>-->
+                <!--</tr>-->
+                <!--<% }); %>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+<!--</div>-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
